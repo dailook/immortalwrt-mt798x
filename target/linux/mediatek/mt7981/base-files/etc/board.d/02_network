@@ -97,6 +97,11 @@ mediatek_setup_interfaces()
 		ucidef_add_switch "switch0" \
 			"2:lan" "3:lan" "4:lan" "0:wan" "6u@eth0" "5u@eth1"
 		;;
+	*gielink,g33pro*)
+		ucidef_set_interfaces_lan_wan "eth0" "eth1"
+		ucidef_add_switch "switch0" \
+			"2:lan" "3:lan" "4:lan" "6u@eth0"
+		;;
 	nradio,wt9103)
 		ucidef_set_interfaces_lan_wan "lan1 lan2 lan3 lan4" eth1
 		;;
@@ -327,6 +332,7 @@ mediatek_setup_macs()
 		fi
 		;;
         *kst,wf3000a* |\
+        *gielink,g33pro* |\
 	*newland,nl-wr8103*)
 		local wifi_mac=$(mtd_get_mac_binary Factory 0x4)
 		lan_mac=$(macaddr_add $wifi_mac -1)
