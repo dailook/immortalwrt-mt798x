@@ -201,6 +201,7 @@ platform_do_upgrade() {
 	*abt,asr3000* |\
 	*cetron,ct3003* |\
 	*clt,r30b1* |\
+        *gielink,g33pro* |\
 	*imou,lc-hx3001* |\
 	*jcg,q30* |\
 	nradio,wt9103 |\
@@ -260,6 +261,7 @@ platform_check_image() {
 	*abt,asr3000* |\
 	*cetron,ct3003* |\
 	*clt,r30b1* |\
+        *gielink,g33pro* |\
 	*imou,lc-hx3001* |\
 	*jcg,q30* |\
 	cmcc,a10 |\
