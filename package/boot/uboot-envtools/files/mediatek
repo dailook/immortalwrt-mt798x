@@ -23,6 +23,7 @@ jdcloud,re-cp-03)
 	[ -n "$env_dev" ] && ubootenv_add_uci_config "$env_dev" "0" "0x80000"
 	;;
 *360,t7* |\
+*gielink,g33pro* |\
 *kst,wf3000a* |\
 ruijie,rg-x30e* |\
 *newland,nl-wr8103* |\
