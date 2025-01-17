@@ -51,6 +51,9 @@ ikuai,q3000)
 konka,komi-a31)
         ucidef_set_led_netdev "blue" "BLUE" "blue:status" "eth1" "link"
 	;;
+kjd,kj30-n)
+        ucidef_set_led_netdev "wan" "WAN" "blue:wan" "eth1"
+	;;
 nradio,wt9103)
 	ucidef_set_led_default "power" "POWER" "hc:blue:status" "1"
 	ucidef_set_led_netdev "wifi" "WIFI" "hc:blue:wifi" "rax0" "link"
