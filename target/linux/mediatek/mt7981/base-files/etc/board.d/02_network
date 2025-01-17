@@ -92,6 +92,7 @@ mediatek_setup_interfaces()
 	*mt2500*)
 		ucidef_set_interfaces_lan_wan "eth0" "eth1"
 		;;
+        *kjd,kj30-n* |\
 	*zr-3020*)
 		ucidef_set_interfaces_lan_wan "eth0" "eth1"
 		ucidef_add_switch "switch0" \
@@ -270,6 +271,11 @@ mediatek_setup_macs()
 		wan_mac=$(mtd_get_mac_binary $part_name 0x24)
 		label_mac=$wan_mac
 		local wifi_mac="$(mtd_get_mac_binary $part_name 0x04)"
+		;;
+	*kjd,kj30-n*)
+		lan_mac=$(mtd_get_mac_binary Factory 0x2A)
+		wan_mac=$(mtd_get_mac_binary Factory 0x24)
+		local wifi_mac="$(mtd_get_mac_binary Factory 0x04)"
 		;;
 	routerich,ax3000)
 		local wifi_mac="$(mtd_get_mac_binary $part_name 0x4)"
