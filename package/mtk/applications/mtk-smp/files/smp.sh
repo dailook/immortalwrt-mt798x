@@ -761,6 +761,7 @@ setup_model()
 	h3c,nx30pro |\
 	*honor,fur-602* |\
 	konka,komi-a31 |\
+        *kjd,kj30-n* |\
         *kst,wf3000a* |\
 	*nokia,ea0326gmp* |\
 	newland,nl-wr8103 |\
