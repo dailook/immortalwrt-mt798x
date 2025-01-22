@@ -753,6 +753,8 @@ setup_model()
 	abt,asr3000* |\
 	*clt,r30b1* |\
 	cmcc,a10* |\
+        *e-life,etr631-t* |\
+	*e-life,etr635-u* |\
         *gielink,g33pro* |\
 	xiaomi,mi-router-wr30u* |\
 	xiaomi,mi-router-ax3000t* |\
