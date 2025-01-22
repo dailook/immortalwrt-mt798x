@@ -55,6 +55,8 @@ mediatek_setup_interfaces()
 			"1:lan:3" "2:lan:2" "3:lan:1" "0:wan" "6t@eth0"
 		;;
 	*clt,r30b1* |\
+        *e-life,etr631-t* |\
+        *e-life,etr635-u* |\
 	h3c,nx30pro |\
 	*imou,lc-hx3001* |\
 	*newland,nl-wr8103* |\
@@ -266,6 +268,8 @@ mediatek_setup_macs()
 		fi
 		;;
 	*cmcc,a10* |\
+        *e-life,etr631-t* |\
+        *e-life,etr635-u* |\
 	*konka,komi-a31*)
 		lan_mac=$(mtd_get_mac_binary $part_name 0x2A)
 		wan_mac=$(mtd_get_mac_binary $part_name 0x24)
