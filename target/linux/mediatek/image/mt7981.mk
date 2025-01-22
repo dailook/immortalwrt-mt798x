@@ -884,3 +884,37 @@ define Device/kjd_kj30-n
   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
 endef
 TARGET_DEVICES += kjd_kj30-n
+
+define Device/e-life_etr631-t
+  DEVICE_VENDOR := E-LIFE
+  DEVICE_MODEL := ETR631-T
+  DEVICE_DTS := mt7981-e-life-etr631-t
+  DEVICE_DTS_DIR := $(DTS_DIR)/mediatek
+  SUPPORTED_DEVICES := e-life,etr631-t
+  UBINIZE_OPTS := -E 5
+  BLOCKSIZE := 128k
+  PAGESIZE := 2048
+  IMAGE_SIZE := 114688k
+  KERNEL_IN_UBI := 1
+  IMAGES += factory.bin
+  IMAGE/factory.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+endef
+TARGET_DEVICES += e-life_etr631-t
+
+define Device/e-life_etr635-u
+  DEVICE_VENDOR := E-LIFE
+  DEVICE_MODEL := ETR635-U
+  DEVICE_DTS := mt7981-e-life-etr635-u
+  DEVICE_DTS_DIR := $(DTS_DIR)/mediatek
+  SUPPORTED_DEVICES := e-life,etr635-u
+  UBINIZE_OPTS := -E 5
+  BLOCKSIZE := 128k
+  PAGESIZE := 2048
+  IMAGE_SIZE := 114688k
+  KERNEL_IN_UBI := 1
+  IMAGES += factory.bin
+  IMAGE/factory.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+endef
+TARGET_DEVICES += e-life_etr635-u
