@@ -48,6 +48,8 @@ ikuai,q3000)
 	ucidef_set_led_default "blue" "BLUE" "q3000:blue" "0"
 	ucidef_set_led_default "red" "RED" "q3000:red" "0"
 	;;
+*e-life,etr631-t* |\
+*e-life,etr635-u* |\
 konka,komi-a31)
         ucidef_set_led_netdev "blue" "BLUE" "blue:status" "eth1" "link"
 	;;
