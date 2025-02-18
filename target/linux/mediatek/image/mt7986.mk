@@ -382,6 +382,24 @@ define Device/xiaomi_redmi-router-ax6000
 endef
 TARGET_DEVICES += xiaomi_redmi-router-ax6000
 
+define Device/xiaomi_redmi-router-ax6000-512rom
+  DEVICE_VENDOR := Xiaomi
+  DEVICE_MODEL := Redmi Router AX6000 512ROM
+  DEVICE_DTS := mt7986a-xiaomi-redmi-router-ax6000-512rom
+  DEVICE_DTS_DIR := $(DTS_DIR)/mediatek
+  DEVICE_PACKAGES := kmod-leds-ws2812b
+  SUPPORTED_DEVICES := xiaomi,redmi-router-ax6000-512rom
+  UBINIZE_OPTS := -E 5
+  BLOCKSIZE := 128k
+  PAGESIZE := 2048
+  IMAGE_SIZE := 501760k
+  KERNEL_IN_UBI := 1
+  IMAGES += factory.bin
+  IMAGE/factory.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+endef
+TARGET_DEVICES += xiaomi_redmi-router-ax6000-512rom
+
 define Device/xiaomi_redmi-router-ax6000-stock
   DEVICE_VENDOR := Xiaomi
   DEVICE_MODEL := Redmi Router AX6000 (stock layout)
