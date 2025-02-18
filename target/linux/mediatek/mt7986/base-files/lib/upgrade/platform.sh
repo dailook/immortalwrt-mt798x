@@ -146,6 +146,7 @@ platform_do_upgrade() {
 		redmi_ax6000_nand_upgrade_tar "$1"
 		;;
 	xiaomi,redmi-router-ax6000 |\
+        xiaomi,redmi-router-ax6000-512rom |\
 	bananapi,bpi-r3mini |\
 	netcore,n60 |\
 	ruijie,rg-x60-pro* |\
