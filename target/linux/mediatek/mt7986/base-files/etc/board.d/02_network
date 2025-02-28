@@ -66,6 +66,7 @@ mediatek_setup_macs()
 	local part_name="Factory"
 	
 	case $board in
+        netcore,n60pro|\
 	*netcore,n60*)
 		wifi_mac=$(mtd_get_mac_binary $part_name 4)
 		lan_mac="$(macaddr_add $wifi_mac -1)"
