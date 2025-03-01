@@ -8,7 +8,7 @@
 #include "mt7986a.dtsi"
 #include "mt7986a-pinctrl.dtsi"
 / {
-	model = "Netcore N60Pro";
+	model = "NETCORE N60Pro";
 	compatible = "netcore,n60pro", "mediatek,mt7986a";
 	chosen {
 		bootargs = "console=ttyS0,115200n1 loglevel=8  \
@@ -54,8 +54,18 @@
  			label = "blue:wan";
  			gpios = <&pio 32 GPIO_ACTIVE_LOW>;
  		};
+ 			
+		led_usb_blue: led-2 {
+ 			label = "blue:usb";
+			gpios = <&pio 30 GPIO_ACTIVE_LOW>;
+		};
+
+		led_mesh_blue: led-3 {
+ 			label = "blue:mesh";
+			gpios = <&pio 31 GPIO_ACTIVE_LOW>;
+		};
  		
- 		led_wlan_blue: led-2 {
+ 		led_wlan_blue: led-4 {
  			label = "blue:wlan";
  			gpios = <&pio 2 GPIO_ACTIVE_LOW>;
  		};
