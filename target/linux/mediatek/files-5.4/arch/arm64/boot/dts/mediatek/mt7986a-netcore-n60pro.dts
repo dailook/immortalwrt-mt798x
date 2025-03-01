@@ -8,7 +8,7 @@
 #include "mt7986a.dtsi"
 #include "mt7986a-pinctrl.dtsi"
 / {
-	model = "NETCORE N60Pro";
+	model = "Netcore N60Pro";
 	compatible = "netcore,n60pro", "mediatek,mt7986a";
 	chosen {
 		bootargs = "console=ttyS0,115200n1 loglevel=8  \
