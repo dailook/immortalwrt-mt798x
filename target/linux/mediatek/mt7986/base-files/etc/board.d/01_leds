@@ -18,6 +18,7 @@ netcore,n60pro)
 	ucidef_set_led_netdev "wan" "wan" "blue:wan" "eth1"
 	ucidef_set_led_netdev "wlan" "wlan" "blue:wlan" "rax0"
 	ucidef_set_led_netdev "usb" "usb" "blue:usb" "usb0"
+        ucidef_set_led_netdev "2.5GLAN" "2.5GLAN" "blue:mesh" "lan0"
 	;;
 esac
 
