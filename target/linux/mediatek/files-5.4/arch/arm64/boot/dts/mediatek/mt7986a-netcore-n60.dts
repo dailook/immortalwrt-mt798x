@@ -144,7 +144,7 @@
  			reset-assert-us = <600>;
  			reset-deassert-us = <20000>;
  			phy-mode = "2500base-x";
-                        maxlinear,led-reg = <0x0 0x0 0x0 0x17>;
+                        maxlinear,led-reg = <0x0 0x12 0x18 0x17>;
  		};
  		
  		switch@0 {
