@@ -166,12 +166,14 @@
 			compatible = "ethernet-phy-id67c9.de0a";
  			reg = <5>;
  			phy-mode = "2500base-x";
+                        maxlinear,led-reg = <0x0 0x0 0x0 0x17>;
 		};
 
 		phy6: phy@6 {
  			compatible = "ethernet-phy-id67c9.de0a";
  			reg = <6>;
  			phy-mode = "2500base-x";
+                        maxlinear,led-reg = <0x0 0x0 0x0 0x17>;
 		};
 
 		switch@0 {
