@@ -42,6 +42,11 @@ mediatek_setup_interfaces()
  	glinet,gl-mt6000)
  		ucidef_set_interfaces_lan_wan "lan1 lan2 lan3 lan4 lan5" eth1
  		;;
+	ikuai,q6000)
+		ucidef_set_interfaces_lan_wan "eth0" "eth1"
+		ucidef_add_switch "switch0"  \
+		        "4:lan:1" "3:lan:2" "2:lan:3" "6u@eth0"
+		;;
 	jdcloud,re-cp-03)
 		ucidef_set_interfaces_lan_wan "eth0" "eth1"
 		ucidef_add_switch "switch0" "1:lan" "2:lan" "3:lan" "4:lan" "6u@eth0"
@@ -76,6 +81,11 @@ mediatek_setup_macs()
  		label_mac=$(mmc_get_mac_binary factory 0x0a)
  		wan_mac=$label_mac
  		lan_mac=$(macaddr_add "$label_mac" 2)
+ 		;;
+	ikuai,q6000)
+ 		wifi_mac=$(mtd_get_mac_binary Factory 0x0A)
+ 		lan_mac=$(mtd_get_mac_binary Factory 0x04)
+ 		wan_mac="$(macaddr_add $lan_mac -1)"
  		;;
 	ruijie,rg-x60-pro*)
  		label_mac=$(mtd_get_mac_ascii product_info ethaddr)
