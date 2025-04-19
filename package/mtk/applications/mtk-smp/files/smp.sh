@@ -738,7 +738,8 @@ setup_model()
 	netcore,n60 |\
         netcore,n60pro |\
 	ikuai,q6000 |\
-	glinet,gl-mt6000|\
+        ikuai,q6000-emmc |\
+	glinet,gl-mt6000|\ 
 	ruijie,rg-x60-pro* |\
 	jdcloud,re-cp-03 |\
 	tplink,tl-xdr608* |\
