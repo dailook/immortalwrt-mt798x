@@ -485,6 +485,17 @@ define Device/ikuai_q6000
 endef
 TARGET_DEVICES += ikuai_q6000
 
+define Device/ikuai_q6000-emmc
+  DEVICE_VENDOR := iKuai
+  DEVICE_MODEL := Q6000-EMMC
+  DEVICE_DTS := mt7986a-ikuai-q6000-emmc
+  DEVICE_DTS_DIR := $(DTS_DIR)/mediatek
+  SUPPORTED_DEVICES := ikuai,q6000-emmc
+  DEVICE_PACKAGES := automount coremark blkid blockdev fdisk f2fsck mkf2fs kmod-mmc luci-app-ksmbd luci-i18n-ksmbd-zh-cn ksmbd-utils
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+endef
+TARGET_DEVICES += ikuai_q6000-emmc
+
 define Device/jdcloud_re-cp-03
   DEVICE_VENDOR := JDCloud
   DEVICE_MODEL := RE-CP-03
