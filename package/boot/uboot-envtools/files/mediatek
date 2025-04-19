@@ -18,6 +18,7 @@ cmcc,xr30-emmc |\
 *sl,3000* |\
 sl,3000-emmc |\
 glinet,gl-mt6000 |\
+ikuai,q6000-emmc |\
 jdcloud,re-cp-03)
 	env_dev=$(find_mmc_part "u-boot-env")
 	[ -n "$env_dev" ] && ubootenv_add_uci_config "$env_dev" "0" "0x80000"
