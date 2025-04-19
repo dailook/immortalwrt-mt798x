@@ -42,6 +42,7 @@ mediatek_setup_interfaces()
  	glinet,gl-mt6000)
  		ucidef_set_interfaces_lan_wan "lan1 lan2 lan3 lan4 lan5" eth1
  		;;
+        ikuai,q6000-emmc |\
 	ikuai,q6000)
 		ucidef_set_interfaces_lan_wan "eth0" "eth1"
 		ucidef_add_switch "switch0"  \
@@ -86,6 +87,20 @@ mediatek_setup_macs()
  		wifi_mac=$(mtd_get_mac_binary Factory 0x0A)
  		lan_mac=$(mtd_get_mac_binary Factory 0x04)
  		wan_mac="$(macaddr_add $lan_mac -1)"
+ 		;;
+	ikuai,q6000-emmc)
+		lan_mac=$(mmc_get_mac_binary factory 0x04)
+		wan_mac=$(macaddr_add "$lan_mac" -1)
+		local b0dat="$(l1dat if2dat ra0)"
+		local b1dat="$(l1dat if2dat rax0)"
+		if [ -f ${b0dat} ] && ! grep -q "MacAddress=" ${b0dat}; then
+			local b0mac="$(mmc_get_mac_binary factory 0x0A)"
+			echo "MacAddress=$b0mac" >> ${b0dat}
+		fi
+		if [ -f ${b1dat} ] && ! grep -q "MacAddress=" ${b1dat}; then
+			local b1mac="$(macaddr_setbit_la $b0mac)"
+			echo "MacAddress=$b1mac" >> ${b1dat}
+		fi
  		;;
 	ruijie,rg-x60-pro*)
  		label_mac=$(mtd_get_mac_ascii product_info ethaddr)
