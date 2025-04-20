@@ -71,6 +71,11 @@ routerich,ax3000)
 	ucidef_set_led_netdev "wlan2g" "WLAN 2G" "blue:wlan2g" "ra0"
 	ucidef_set_led_netdev "wlan5g" "WLAN 5G" "red:wlan5g" "rax0"
 	;;
+sx,7981r128)
+	ucidef_set_led_netdev "lan" "LAN" "LAN" "lan2"
+	ucidef_set_led_netdev "sfp" "SFP" "SFP" "eth1"
+	ucidef_set_led_netdev "wifi5g" "WIFI5G" "WIFI5G" "rax0"
+	ucidef_set_led_netdev "wifi2g" "WIFI2G" "WIFI2G" "ra0"
 *newland,nl-wr8103*)
 	ucidef_set_led_default "red" "RED" "red:status" "0"
 	ucidef_set_led_default "green" "GREEN" "green:status" "0"
