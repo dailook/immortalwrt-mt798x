@@ -775,6 +775,7 @@ setup_model()
 	ruijie,rg-x30e* |\
         *sl,3000* |\
         *sl,3000-emmc* |\
+	sx,7981r128 |\
 	*7981*)
 		MT7981_whnat $num_of_wifi $usbnet
 		;;
