@@ -217,6 +217,7 @@ platform_do_upgrade() {
         *kjd,kj30-n* |\
         *kst,wf3000a* |\
 	routerich,ax3000 |\
+        sx,7981r128 |\
 	*nokia,ea0326gmp* |\
 	*newland,nl-wr8103* |\
 	newland,nl-wr9103 |\
@@ -284,6 +285,7 @@ platform_check_image() {
 	newland,nl-wr9103 |\
 	nradio,wt9103 |\
         *sl,3000* |\
+	sx,7981r128 |\
 	*snand* |\
 	*emmc* |\
 	routerich,ax3000)
