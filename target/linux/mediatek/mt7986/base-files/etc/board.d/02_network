@@ -32,8 +32,7 @@ mediatek_setup_interfaces()
 	bananapi,bpi-r3mini*)
 		ucidef_set_interfaces_lan_wan "eth0" "eth1"
 		;;
-	netcore,n60 |\
-	ruijie,rg-x60-pro*)
+	netcore,n60)
 		ucidef_set_interfaces_lan_wan "lan0 lan1 lan2 lan3" eth1
 		;;
 	netcore,n60pro)
@@ -51,6 +50,9 @@ mediatek_setup_interfaces()
 	jdcloud,re-cp-03)
 		ucidef_set_interfaces_lan_wan "eth0" "eth1"
 		ucidef_add_switch "switch0" "1:lan" "2:lan" "3:lan" "4:lan" "6u@eth0"
+		;;
+        ruijie,rg-x60-pro*)
+		ucidef_set_interfaces_lan_wan "lan1 lan2 lan3 lan4" eth1
 		;;
  	tplink,tl-xdr6086)
  		ucidef_set_interfaces_lan_wan "lan1 lan2" eth1
