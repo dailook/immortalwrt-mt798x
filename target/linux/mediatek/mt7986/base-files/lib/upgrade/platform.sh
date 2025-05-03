@@ -150,6 +150,7 @@ platform_do_upgrade() {
 	bananapi,bpi-r3mini |\
 	netcore,n60 |\
         netcore,n60pro |\
+	netcore,n60pro-512rom |\
 	ikuai,q6000 |\
 	ruijie,rg-x60-pro* |\
 	tplink,tl-xdr608* |\
@@ -185,6 +186,7 @@ platform_check_image() {
 	bananapi,bpi-r3mini* |\
 	netcore,n60 |\
         netcore,n60pro |\
+	netcore,n60pro-512rom |\
 	ikuai,q6000 |\
 	ruijie,rg-x60-pro* |\
 	*snand* |\
