@@ -55,6 +55,9 @@ xiaomi,redmi-router-ax6000*)
 *e-life,etr635-u* |\
 ikuai,q6000 |\
 sx,7981r128 |\
+netcore,n60 |\
+netcore,n60pro |\
+netcore,n60pro-512rom |\
 nradio,wt9103 |\
 *konka,komi-a31*)
 	ubootenv_add_uci_config "/dev/mtd2" "0x0" "0x20000" "0x80000" "1"
