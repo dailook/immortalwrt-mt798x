@@ -35,6 +35,7 @@ mediatek_setup_interfaces()
 	netcore,n60)
 		ucidef_set_interfaces_lan_wan "lan0 lan1 lan2 lan3" eth1
 		;;
+        netcore,n60pro-512rom |\
 	netcore,n60pro)
 		ucidef_set_interfaces_lan_wan "lan0 lan1 lan2 lan3" eth1
 		;;
@@ -75,6 +76,7 @@ mediatek_setup_macs()
 	
 	case $board in
         netcore,n60pro|\
+        netcore,n60pro-512rom |\
 	*netcore,n60*)
 		wifi_mac=$(mtd_get_mac_binary $part_name 4)
 		lan_mac="$(macaddr_add $wifi_mac -1)"
