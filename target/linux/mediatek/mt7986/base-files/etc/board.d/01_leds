@@ -13,6 +13,7 @@ xiaomi,redmi-router-ax6000*)
 	ucidef_set_led_default "status" "status" "rgb:status" "1"
 	ucidef_set_led_netdev "wan" "wan" "rgb:network" "eth1"
 	;;
+netcore,n60pro-512rom |\
 netcore,n60pro)
 	ucidef_set_led_default "power" "power" "blue:status" "1"
 	ucidef_set_led_netdev "wan" "wan" "blue:wan" "eth1"
