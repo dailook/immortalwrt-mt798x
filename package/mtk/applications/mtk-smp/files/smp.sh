@@ -737,6 +737,7 @@ setup_model()
 	bananapi,bpi-r3mini* |\
 	netcore,n60 |\
         netcore,n60pro |\
+	netcore,n60pro-512rom |\
 	ikuai,q6000 |\
         ikuai,q6000-emmc |\
 	glinet,gl-mt6000|\ 
