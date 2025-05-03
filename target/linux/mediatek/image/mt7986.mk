@@ -542,6 +542,24 @@ define Device/netcore_n60pro
 endef
 TARGET_DEVICES += netcore_n60pro
 
+define Device/netcore_n60pro-512rom
+  DEVICE_VENDOR := Netcore
+  DEVICE_MODEL := N60 PRO 512ROM versions
+  DEVICE_DTS := mt7986a-netcore-n60pro-512rom
+  DEVICE_DTS_DIR := $(DTS_DIR)/mediatek
+  DEVICE_PACKAGES := $(MT7986_USB_PKGS) luci-app-samba4
+  SUPPORTED_DEVICES := netcore,n60pro-512rom
+  UBINIZE_OPTS := -E 5
+  BLOCKSIZE := 128k
+  PAGESIZE := 2048
+  IMAGE_SIZE := 501760k
+  KERNEL_IN_UBI := 1
+  IMAGES += factory.bin
+  IMAGE/factory.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+endef
+TARGET_DEVICES += netcore_n60pro-512rom
+
 define Device/glinet_gl-mt6000
    DEVICE_VENDOR := GL.iNet
    DEVICE_MODEL := GL-MT6000
