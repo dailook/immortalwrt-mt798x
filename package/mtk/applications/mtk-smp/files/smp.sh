@@ -773,6 +773,7 @@ setup_model()
 	newland,nl-wr8103 |\
 	newland,nl-wr9103 |\
 	nradio,wt9103 |\
+        qczt,qc3018ax |\
 	ruijie,rg-x30e* |\
         *sl,3000* |\
         *sl,3000-emmc* |\
