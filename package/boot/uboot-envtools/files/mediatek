@@ -48,11 +48,15 @@ netcore,n60pro-512rom |\
 *imou,lc-hx3001*)
 	ubootenv_add_uci_config "/dev/mtd2" "0x0" "0x80000" "0x80000" "1"
 	;;
+qczt,qc3018ax)
+	env_dev=$(find_mmc_part "u-boot-env")
+	[ -n "$env_dev" ] && ubootenv_add_uci_config "$env_dev" "0" "0x80000" "1"
+	;;
 xiaomi,mi-router-ax3000t* |\
 xiaomi,mi-router-wr30u* |\
 xiaomi,redmi-router-ax6000-512rom |\
 xiaomi,redmi-router-ax6000*)
-	ubootenv_add_uci_config "/dev/mtd2" "0x0" "0x10000" "0x20000" "1"
+	ubootenv_add_uci_config "/dev/mtd2" "0x0" "0x10000" "0x20000" "1" 
 	;;
 *e-life,etr631-t* |\
 *e-life,etr635-u* |\
