@@ -17,12 +17,14 @@ caldata_validate() {
 do_extract_caldata() {
 	case $(board_name) in
 	cmcc,xr30-emmc |\
-        qczt,qc3018ax |\
         sl,3000-emmc |\
 	cmcc,rax3000m-emmc)
 		FIRMWARE=MT7981_iPAiLNA_EEPROM.bin
 		caldata_validate && exit 0
 		caldata_extract_mmc "factory" 0x0 0x1000
+		;;
+	qczt,qc3018ax)
+		caldata_extract_mmc "rf" 0x0 0x1000
 		;;
 	esac
 }
