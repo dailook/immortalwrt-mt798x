@@ -125,6 +125,11 @@ mediatek_setup_interfaces()
 	ruijie,rg-x30e*)
 		ucidef_set_interfaces_lan_wan "lan1 lan2 lan3" wan
 		;;
+	umi,uax3000e)
+		ucidef_set_interfaces_lan_wan "eth0" "eth1"
+		ucidef_add_switch "switch0" \
+			"0:lan:1" "1:lan:2" "2:lan:3" "6u@eth0"
+		;;
 	*)
 		ucidef_set_interfaces_lan_wan "lan1 lan2 lan3 lan4" eth1
 		;;
@@ -384,6 +389,21 @@ mediatek_setup_macs()
 		local wifi_mac=$(mtd_get_mac_binary Factory 0x4)
 		lan_mac=$(macaddr_add $wifi_mac -1)
 		wan_mac=$(macaddr_add $wifi_mac -2)
+		;;
+	umi,uax3000e)
+		lan_mac=$(mmc_get_mac_binary factory 0x2A)
+		wan_mac=$(mmc_get_mac_binary factory 0x04)
+		wifi_mac=$(mmc_get_mac_binary factory 0x24)
+		local b0dat="$(l1dat if2dat ra0)"
+		local b1dat="$(l1dat if2dat rax0)"
+		if [ -f ${b0dat} ] && ! grep -q "MacAddress=" ${b0dat}; then
+			local b0mac="$(macaddr_add $wifi_mac)"
+			echo "MacAddress=$b0mac" >> ${b0dat}
+		fi
+		if [ -f ${b1dat} ] && ! grep -q "MacAddress=" ${b1dat}; then
+			local b1mac="$(macaddr_add $wifi_mac 1)"
+			echo "MacAddress=$b1mac" >> ${b1dat}
+		fi
 		;;
 	*)
 		wan_mac=$(mtd_get_mac_binary $part_name $wan_mac_offset)
