@@ -967,3 +967,15 @@ define Device/qczt_qc3018ax
   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
 endef
 TARGET_DEVICES += qczt_qc3018ax
+
+define Device/umi_uax3000e
+  DEVICE_VENDOR := UMI
+  DEVICE_MODEL := UAX3000E
+  DEVICE_DTS := mt7981-umi-uax3000e
+  DEVICE_DTS_DIR := $(DTS_DIR)/mediatek
+  SUPPORTED_DEVICES := umi,uax3000e
+  DEVICE_PACKAGES := $(MT7981_USB_PKGS) f2fsck losetup mkf2fs kmod-fs-f2fs automount coremark blkid blockdev fdisk kmod-mmc \
+	luci-app-ksmbd luci-i18n-ksmbd-zh-cn ksmbd-utils
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+endef
+TARGET_DEVICES += umi_uax3000e
