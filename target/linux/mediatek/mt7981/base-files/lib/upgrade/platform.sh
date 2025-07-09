@@ -229,6 +229,7 @@ platform_do_upgrade() {
         qczt,qc3018ax |\
         *sl,3000* |\
         sl,3000-emmc |\
+	umi,uax3000e |\
 	*emmc*)
 		CI_KERNPART="kernel"
 		CI_ROOTPART="rootfs"
@@ -288,6 +289,7 @@ platform_check_image() {
         qczt,qc3018ax |\
         *sl,3000* |\
 	sx,7981r128 |\
+        umi,uax3000e |\
 	*snand* |\
 	*emmc* |\
 	routerich,ax3000)
