@@ -14,7 +14,7 @@
 	aliases {
 		led-boot = &red_led;
 		led-failsafe = &red_led;
-		led-running = &blue_led;
+		led-running = &green:wan;
 		led-upgrade = &blue_led;
 	};
 
@@ -32,7 +32,7 @@
 
                 green_led: led-1 {
                         label = "green:wan";
-                        gpios = <&pio 9 GPIO_ACTIVE_LOW>;
+                        gpios = <&pio 34 GPIO_ACTIVE_LOW>;
                 };
                 
 		blue_led: led-2 {
