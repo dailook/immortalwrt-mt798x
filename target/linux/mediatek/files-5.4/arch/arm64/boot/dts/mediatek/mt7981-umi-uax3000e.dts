@@ -14,7 +14,7 @@
 	aliases {
 		led-boot = &red_led;
 		led-failsafe = &red_led;
-		led-running = &green:wan;
+		led-running = &green_led;
 		led-upgrade = &blue_led;
 	};
 
